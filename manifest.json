@@ -1,0 +1,28 @@
+{
+	"manifest_version": 2,
+	"name": "Readnow",
+	"description": "Makes the body text readable in page",
+	"version": "1.0",
+	"commands": {
+		"make-readable": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+E",
+				"mac": "MacCtrl+Shift+E"
+			},
+			"description": "Make body text readable"
+		}
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*/*"],
+			"js": ["tinycolor-min.js","readnow.js"]
+		}
+	],
+	"background": {
+		"persistent": false,
+		"scripts": ["background.js"]
+	},
+	"permissions": [
+		"activeTab"
+	]
+}
