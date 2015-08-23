@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Readnow",
-	"description": "Makes the body text readable in page",
+	"description": "Tries to make the body text on a page more readable",
 	"version": "1.0",
 	"commands": {
 		"make-readable": {
