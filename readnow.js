@@ -73,6 +73,10 @@ function makeReadable() {
 		elements = target.querySelectorAll('h1,h2,h3,h4');
 		styles = parseStyles("font-weight: 700,font-family:'Source Sans Pro',webkitFontSmoothing:antialiased,color:" + textColor);
 		styleElements(elements, styles);
+
+		elements = target.querySelectorAll('blockquote p');
+		styles = parseStyles("font-size:20px,font-style:italic,font-family:'Source Sans Pro',webkitFontSmoothing:antialiased,color:" + textColor);
+		styleElements(elements, styles);
 	}
 
 	function parseStyles(prefString) {
