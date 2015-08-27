@@ -100,7 +100,7 @@ function makeReadable() {
 		}
 	}
 
-	function getActualBackgroundColor(elem) {
+	function getBackgroundColor(elem) {
 		// We could create a new element and check what Chrome returns for
 		// backgroundColor to make sure what we should compare it to
 		while (elem && getComputedStyle(elem).backgroundColor == "rgba(0, 0, 0, 0)")
@@ -109,7 +109,8 @@ function makeReadable() {
 	}
 
 	function getTextColor(target) {
-		const color = tinycolor(getActualBackgroundColor(target));
-		return color.isLight() ? '#2F4F4F' : '#fff';
+		// TODO If we get to the document and still have transparent background it's WHITE
+		const color = tinycolor(getBackgroundColor(target));
+		return color.isLight() ? '#111' : '#fff';
 	}
 }
