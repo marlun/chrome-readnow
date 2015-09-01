@@ -59,15 +59,15 @@ function makeReadable() {
 		styleElements([target], styles);
 
 		elements = target.querySelectorAll('p');
-		styles = parseStyles("font:400 24px/1.4 'Source Sans Pro',webkitFontSmoothing:antialiased,color:" + textColor);
+		styles = parseStyles("font:24px/1.4 'Source Sans Pro',webkitFontSmoothing:antialiased,color:" + textColor);
 		styleElements(elements, styles);
 
 		elements = target.querySelectorAll('li');
-		styles = parseStyles("font:400 22px/1.4 'Source Sans Pro',webkitFontSmoothing:antialiased,color:" + textColor);
+		styles = parseStyles("font:22px/1.4 'Source Sans Pro',webkitFontSmoothing:antialiased,color:" + textColor);
 		styleElements(elements, styles);
 
 		elements = target.querySelectorAll('pre,code,.code');
-		styles = parseStyles("font:400 18px/1.4 'InconsolataLGC',webkitFontSmoothing:antialiased");
+		styles = parseStyles("font:18px/1.4 'InconsolataLGC',webkitFontSmoothing:antialiased");
 		styleElements(elements, styles);
 
 		elements = target.querySelectorAll('h1,h2,h3,h4');
@@ -77,6 +77,11 @@ function makeReadable() {
 		elements = target.querySelectorAll('blockquote p');
 		styles = parseStyles("font-size:20px,font-style:italic,font-family:'Source Sans Pro',webkitFontSmoothing:antialiased,color:" + textColor);
 		styleElements(elements, styles);
+
+		elements = target.querySelectorAll('p strong');
+		styles = parseStyles("font-weight:700");
+		styleElements(elements, styles);
+
 	}
 
 	function parseStyles(prefString) {
