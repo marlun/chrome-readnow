@@ -55,27 +55,39 @@ function makeReadable() {
 
 		// Add styles to the target itself to fix some sites
 		// that doesn't use paragraph elements
-		styles = parseStyles("font-family:'Source Sans Pro',webkitFontSmoothing:antialiased,color:" + textColor);
+		styles = parseStyles("font-family:'Roboto',webkitFontSmoothing:antialiased");
 		styleElements([target], styles);
 
 		elements = target.querySelectorAll('p');
-		styles = parseStyles("font:24px/1.4 'Source Sans Pro',webkitFontSmoothing:antialiased,color:" + textColor);
+		styles = parseStyles("font-size:22px,line-height:1.4,font-family:'Roboto',webkitFontSmoothing:antialiased");
 		styleElements(elements, styles);
 
 		elements = target.querySelectorAll('li');
-		styles = parseStyles("font:22px/1.4 'Source Sans Pro',webkitFontSmoothing:antialiased,color:" + textColor);
+		styles = parseStyles("font-size:22px,line-height:1.4,font-family:'Roboto',webkitFontSmoothing:antialiased");
 		styleElements(elements, styles);
 
-		elements = target.querySelectorAll('pre,code,.code');
-		styles = parseStyles("font:18px/1.4 'InconsolataLGC',webkitFontSmoothing:antialiased");
+		elements = target.querySelectorAll('pre,code,.code,.highlight');
+		styles = parseStyles("font-size:18px,line-height:1.4,font-family:'InconsolataLGC',webkitFontSmoothing:antialiased");
 		styleElements(elements, styles);
 
 		elements = target.querySelectorAll('h1,h2,h3,h4');
-		styles = parseStyles("font-weight: 700,font-family:'Source Sans Pro',webkitFontSmoothing:antialiased,color:" + textColor);
+		styles = parseStyles("font-weight:700,margin:1em 0 .5em,line-height:1.5,font-family:'Roboto',webkitFontSmoothing:antialiased");
 		styleElements(elements, styles);
 
-		elements = target.querySelectorAll('blockquote p');
-		styles = parseStyles("font-size:20px,font-style:italic,font-family:'Source Sans Pro',webkitFontSmoothing:antialiased,color:" + textColor);
+		elements = target.querySelectorAll('h2');
+		styles = parseStyles("font-size:30px");
+		styleElements(elements, styles);
+
+		elements = target.querySelectorAll('h3');
+		styles = parseStyles("font-size:28px");
+		styleElements(elements, styles);
+
+		elements = target.querySelectorAll('h4');
+		styles = parseStyles("font-size:22px");
+		styleElements(elements, styles);
+
+		elements = target.querySelectorAll('blockquote,blockquote p');
+		styles = parseStyles("font-size:18px,font-family:'Roboto',webkitFontSmoothing:antialiased");
 		styleElements(elements, styles);
 
 		elements = target.querySelectorAll('p strong');
@@ -121,6 +133,9 @@ function makeReadable() {
 	}
 
 	function getTextColor(target) {
+		// TODO Remove the use of tinycolor and see if you can make it so that
+		// SHIFT-CTRL-E doesn't change the color but if you hit it again swaps
+		// between making it white and black?
 		const color = tinycolor(getBackgroundColor(target));
 		return color.isLight() ? '#111' : '#fff';
 	}
