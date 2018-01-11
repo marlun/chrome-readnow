@@ -51,7 +51,7 @@ function makeReadable() {
 		let styles, elements;
 
 		// Get the text color based on the target background color
-		const textColor = getTextColor(target);
+		const textColor = '#111';
 
 		// Add styles to the target itself to fix some sites
 		// that doesn't use paragraph elements
@@ -67,7 +67,7 @@ function makeReadable() {
 		styleElements(elements, styles);
 
 		elements = target.querySelectorAll('pre,code,.code,.highlight');
-		styles = parseStyles("font-size:16px,line-height:1.4,font-family:'OperatorMono-Book',webkitFontSmoothing:subpixel-antialiased");
+		styles = parseStyles("font-size:16px,line-height:1.4,font-family:'Operator Mono Book',webkitFontSmoothing:subpixel-antialiased");
 		styleElements(elements, styles);
 
 		elements = target.querySelectorAll('h1,h2,h3,h4');
@@ -119,24 +119,5 @@ function makeReadable() {
 				el.style[style.name] = style.value;
 			}
 		}
-	}
-
-	function getBackgroundColor(elem) {
-		// We could create a new element and check what Chrome returns for
-		// backgroundColor to make sure what we should compare it to
-		while (elem && getComputedStyle(elem).backgroundColor == "rgba(0, 0, 0, 0)")
-			elem = elem.parentElement !== null ? elem.parentNode : false;
-
-		// We return white as the default color if we don't find anything other
-		// than transparent background color
-		return elem ? getComputedStyle(elem).backgroundColor : "white";
-	}
-
-	function getTextColor(target) {
-		// TODO Remove the use of tinycolor and see if you can make it so that
-		// SHIFT-CTRL-E doesn't change the color but if you hit it again swaps
-		// between making it white and black?
-		const color = tinycolor(getBackgroundColor(target));
-		return color.isLight() ? '#111' : '#fff';
 	}
 }

@@ -15,7 +15,7 @@
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
-			"js": ["tinycolor-min.js","readnow.js"]
+			"js": ["readnow.js"]
 		}
 	],
 	"background": {
