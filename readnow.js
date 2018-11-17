@@ -55,45 +55,32 @@ function makeReadable() {
 
 		// Add styles to the target itself to fix some sites
 		// that doesn't use paragraph elements
-		styles = parseStyles("font-family:'Literata',webkitFontSmoothing:subpixel-antialiased");
+		styles = parseStyles("font-family:'NYTImperial',webkitFontSmoothing:subpixel-antialiased");
 		styleElements([target], styles);
 
 		elements = target.querySelectorAll('p');
-		styles = parseStyles("font-size:18px,line-height:1.4,font-family:'Literata',webkitFontSmoothing:subpixel-antialiased");
+		styles = parseStyles("font-size:18px,line-height:1.4,font-family:'NYTImperial',webkitFontSmoothing:subpixel-antialiased");
 		styleElements(elements, styles);
 
 		elements = target.querySelectorAll('li');
-		styles = parseStyles("font-size:18px,line-height:1.4,font-family:'Literata',webkitFontSmoothing:subpixel-antialiased");
+		styles = parseStyles("font-size:18px,line-height:1.4,font-family:'NYTImperial',webkitFontSmoothing:subpixel-antialiased");
 		styleElements(elements, styles);
 
 		elements = target.querySelectorAll('pre,code,.code,.highlight');
-		styles = parseStyles("font-size:16px,line-height:1.4,font-family:'Operator Mono Book',webkitFontSmoothing:subpixel-antialiased");
-		styleElements(elements, styles);
-
-		elements = target.querySelectorAll('h1,h2,h3,h4');
-		styles = parseStyles("font-weight:700,margin:1em 0 .5em,line-height:1.5,font-family:'Literata',webkitFontSmoothing:subpixel-antialiased");
-		styleElements(elements, styles);
-
-		elements = target.querySelectorAll('h2');
-		styles = parseStyles("font-size:30px");
-		styleElements(elements, styles);
-
-		elements = target.querySelectorAll('h3');
-		styles = parseStyles("font-size:28px");
-		styleElements(elements, styles);
-
-		elements = target.querySelectorAll('h4');
-		styles = parseStyles("font-size:22px");
+		styles = parseStyles("font-size:16px,line-height:1.4,font-family:'Iosevka Term',webkitFontSmoothing:subpixel-antialiased");
 		styleElements(elements, styles);
 
 		elements = target.querySelectorAll('blockquote,blockquote p');
-		styles = parseStyles("font-size:18px,font-family:'Literata',webkitFontSmoothing:subpixel-antialiased");
+		styles = parseStyles("font-size:18px,font-family:'NYTImperial',webkitFontSmoothing:subpixel-antialiased");
 		styleElements(elements, styles);
 
 		elements = target.querySelectorAll('p strong');
 		styles = parseStyles("font-weight:700");
 		styleElements(elements, styles);
 
+		elements = target.querySelectorAll('h1,h2,h3,h4');
+		styles = parseStyles("font-weight:700,margin:1em 0 .5em,line-height:1.5,font-family:'NYTImperial',webkitFontSmoothing:subpixel-antialiased");
+		styleElements(elements, styles);
 	}
 
 	function parseStyles(prefString) {
